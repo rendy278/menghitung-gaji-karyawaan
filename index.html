@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Gaji Karyawan</title>
+</head>
+
+<body>
+    <h1>Hitung Gaji Karyawan</h1>
+    <form action="/calculate" method="post">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama anda"><br><br>
+        <label for="phone">NO. Rekening</label>
+        <input type="number" id="phone" name="phone"> <br> <br>
+        <label for="hoursWorked">Jam Kerja (dalam seminggu):</label>
+        <input type="text" id="hoursWorked" name="hoursWorked"><br><br>
+        <label for="hourlyRate">Tarif Per Jam:</label>
+        <input type="text" id="hourlyRate" name="hourlyRate"><br><br>
+        <input type="submit" value="Hitung Gaji">
+    </form>
+    <script src="app.js"></script>
+</body>
+
+</html>
