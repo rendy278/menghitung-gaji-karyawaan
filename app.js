@@ -21,7 +21,7 @@ app.post("/calculate", (req, res) => {
 
   // Dapatkan data dari form
   const name = req.body.name;
-  const phone = req.body.phone;
+  const rec = req.body.rec;
 
   let normalHours = Math.min(hoursWorked, 40);
   let overtimeHours = Math.max(hoursWorked - 40, 0);
@@ -29,7 +29,7 @@ app.post("/calculate", (req, res) => {
   let overtimePay = overtimeHours * hourlyRate * 1.5;
   let totalPay = normalPay + overtimePay;
 
-  // Format gaji dengan pemisah ribuan dan simbol "Rp"
+  // Format gaji dengan simbol "Rp"
   const formattedSalary = new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
@@ -37,7 +37,7 @@ app.post("/calculate", (req, res) => {
 
   // Kirim pesan dengan nama dan nomor rekening
   res.send(
-    `Gaji karyawan ${name} akan dikirimkan ke rekening ${phone}. Total gaji yang akan dikirimkan adalah: ${formattedSalary}`
+    `Gaji karyawan ${name} akan dikirimkan ke rekening ${rec}. Total gaji yang akan dikirimkan adalah: ${formattedSalary}`
   );
 });
 
